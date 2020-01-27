@@ -1,0 +1,24 @@
+irods	# iRODS user 
+irods	# iRODS group
+1	# iRODS server's role. 1: provider, 2: consumer
+1	# ODBC driver for Postgres. 1: PostgreSQL ANSI, 2: PostgreSQL Unicode
+localhost	# Database server's hostname or IP address
+5432	# Database server's port
+ICAT	# Database name
+irods	# Database username
+yes	# Please confirm
+testpassword	# Database password
+salt	# Salt for passwords stored in the database
+tempZone	# iRODS server's zone name
+1247	# iRODS server's port
+20000	# iRODS port range (begin) 
+20199	# iRODS port range (end)
+1248	# Control Plane port
+file:///var/lib/irods/configuration_schemas	# Schema Validation Base URI (or off) 
+rods	# iRODS server's administrator username
+yes	# Please confirm 
+tempZoneKey	# iRODS server's zone key
+qwertyuiopasdfghjklzxcvbnm123456	# iRODS server's negotiation key (32 characters)
+qwertyuiopasdfghjklzxcvbnm123456	# Control Plane key (32 characters)
+rods	# iRODS server's administrator password        
+/var/lib/irods/Vault	# iRODS Vault directory
