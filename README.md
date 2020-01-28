@@ -33,3 +33,9 @@ To connect to iRODS' catalog database from host using psql:
 To connect to iRODS server using Python iRODS client (https://github.com/irods/python-irodsclient) 
 > Set the user, password, and zone values in iRODSSession() in client_connect.py\
 > python client_connect.py
+
+References:
+
+> https://irods.org \
+> https://irods.org/uploads/2016/06/irods_beginner_training_2016.pdf \
+> https://github.com/irods/python-irodsclient
