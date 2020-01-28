@@ -7,23 +7,23 @@ but please do not change the setup_irods.input.with_keys file!
 
 Below are some common Docker commands (version number could by X.Y.Z, e.g. 1.0.1):
 
-To create an image:\
+To create an image:
 > sudo docker build -t irods:versionNumber
 
-To view the created image:\
+To view the created image:
 > sudo docker images -f "reference=irods"
 
-To run a container (mapping Postgres and iRODS ports):\
-    sudo docker run -p 5432:5432 -p 1247:1247 irods:versionNumber
+To run a container (mapping Postgres and iRODS ports):
+> sudo docker run -p 5432:5432 -p 1247:1247 irods:versionNumber
 
-To get the name of the running irods container:\
-    sudo docker ps -f "ancestor=irods:versionNumbe"
+To get the name of the running irods container:
+> sudo docker ps -f "ancestor=irods:versionNumber"
 
-To view the container logs:\
-    sudo docker logs containerName
+To view the container logs:
+> sudo docker logs containerName
 
-To SSH into the container:\
-    sudo docker exec -it containerName /bin/bash
+To SSH into the container:
+> sudo docker exec -it containerName /bin/bash
 
 To connect to iRODS' catalog database from host using psql:\
     sudo su postgres\
