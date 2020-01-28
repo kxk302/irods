@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN spt-get update && apt-get install apt-utils
+RUN apt-get update && apt-get install apt-utils
 RUN apt-get update && apt-get -y install wget
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
 
