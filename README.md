@@ -17,7 +17,7 @@ To run a container (mapping Postgres amd iRODS ports):
     sudo docker run -p 5432:5432 -p 1247:1247 irods:versionNumber
 
 To get the name of the running irods container:
-    sudo docker ps -f "ancestor=irods:versionNumbe>"
+    sudo docker ps -f "ancestor=irods:versionNumbe"
 
 To view the container logs: 
     sudo docker logs containerName
