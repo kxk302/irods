@@ -1,13 +1,14 @@
 FROM ubuntu:16.04
 
+# Install some needed utilities
 RUN apt-get update && apt-get install apt-utils
 RUN apt-get update && apt-get -y install wget
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
 
-# Add the PostgreSQL PGP key to verify their Debian packages.
+# Add the Postgresql PGP key to verify their Debian packages.
 RUN wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
-# Add PostgreSQL's repository.
+# Add Postgresql's repository.
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
 
 # Update the repository indexes and install Postgresql (and related) software
@@ -17,6 +18,7 @@ RUN apt-get update && apt-get -y -q install python-software-properties software-
 
 # Add the iRODS PGP key to verify their Debian packages.
 RUN wget -qO - https://unstable.irods.org/irods-unstable-signing-key.asc | apt-key add -
+
 # Add iRODS' repository
 RUN echo "deb [arch=amd64] https://unstable.irods.org/apt/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/renci-irods-unstable.list
 
