@@ -12,7 +12,7 @@ sed -i '0,/localhost/s//*/' /etc/postgresql/9.6/main/postgresql.conf;
 /etc/init.d/postgresql start
 
 # Create Catalog DB and DB user. 
-# *** MUST match values sepcified in /var/lib/irods/scripts/setup_irods.input ***
+# *** MUST match username/password/datbase name sepcified in /var/lib/irods/scripts/setup_irods.input ***
 sudo -u postgres psql --command "CREATE USER irods WITH PASSWORD 'testpassword';" ;
 sudo -u postgres psql --command "CREATE DATABASE \"ICAT\";" ;
 sudo -u postgres psql --command "GRANT ALL PRIVILEGES ON DATABASE \"ICAT\" TO irods;" ;
