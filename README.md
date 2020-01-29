@@ -13,7 +13,7 @@ To create an image:
 To view the created image:
 > sudo docker images -f "reference=irods"
 
-To run a container (mapping Postgres and iRODS ports):
+To run a container (while mapping Postgres and iRODS ports to host machine):
 > sudo docker run -p 5432:5432 -p 1247:1247 irods:versionNumber
 
 To get the name of the running irods container:
