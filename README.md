@@ -5,7 +5,7 @@ an input file (setup_irods.input), which has a single parameter specified on eac
 the input file means, refer to setup_irods.input.with_keys. You can edit setup_irods.input to configure your server as you wish, 
 but please do not change the setup_irods.input.with_keys file!
 
-Below are some common Docker commands (version number could by X.Y.Z, e.g. 1.0.1):
+Below are some common Docker commands (versionNumber could by X.Y.Z, e.g. 1.0.1):
 
 To create an image:
 > sudo docker build -t irods:versionNumber
