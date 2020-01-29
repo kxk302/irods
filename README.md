@@ -27,7 +27,7 @@ To SSH into the container:
 
 To connect to iRODS' catalog database from host using psql:
 > sudo su postgres\
-> cd /Library/PostgreSQL/12/bin (or, cd to any other installation directory)\
+> cd /Library/PostgreSQL/12/bin (or, cd to Postgres installation directory on your machine)\
 > ./psql -h 127.0.0.1 -p 5432 -U irods -d ICAT -W (enter the DB password specified in the input file)
 
 To connect to iRODS server using Python iRODS client (https://github.com/irods/python-irodsclient) 
