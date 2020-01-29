@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install apt-utils
 RUN apt-get update && apt-get -y install wget
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
 
-# Add the Postgresql PGP key to verify their Debian packages.
+# Add the Postgresql PGP key to verify the Debian packages.
 RUN wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 # Add Postgresql's repository.
@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -y -q install python-software-properties software-
     && apt-get -y -q install postgresql-9.6 postgresql-client-9.6 postgresql-contrib-9.6
 
 
-# Add the iRODS PGP key to verify their Debian packages.
+# Add the iRODS PGP key to verify the Debian packages.
 RUN wget -qO - https://unstable.irods.org/irods-unstable-signing-key.asc | apt-key add -
 
 # Add iRODS' repository
