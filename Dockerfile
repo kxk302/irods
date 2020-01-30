@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 # Install some needed utilities
-RUN apt-get update && apt-get install apt-utils
+RUN apt-get update && apt-get -y install apt-utils
 RUN apt-get update && apt-get -y install wget
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
 
