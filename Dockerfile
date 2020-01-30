@@ -1,9 +1,8 @@
 FROM ubuntu:16.04
 
 # Install some needed utilities
-RUN apt-get update && apt-get -y install apt-utils
-RUN apt-get update && apt-get -y install wget
-RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
+RUN apt-get update && apt-get -y install apt-utils && apt-get -y install wget \
+    && apt-get -y install apt-transport-https ca-certificates
 
 # Add the Postgresql PGP key to verify the Debian packages.
 RUN wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
