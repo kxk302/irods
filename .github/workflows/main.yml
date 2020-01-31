@@ -9,5 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run Docker compose to run unit tests
+    - name: Run Docker compose to  start server and client containers
       run: docker-compose up -d
+    - name: Run unit tests on client container
+      run: |
+        sleep 10
+        sudo docker exec irods_client_1 py.test /irods_client_tests.py -v --junitxml="result.xml"
+        if [ $? -eq 0 ]
+	then
+	  echo "Unit tests failed"
+	  exit 0
+	fi
