@@ -15,4 +15,4 @@ jobs:
       run: |
         sleep 10
         sudo docker exec irods_client_1 py.test /irods_client_tests.py -v --junitxml="result.xml"
-        if [ $? -eq 0 ]; then echo "Unit tests failed"; exit 1; fi
+        if [ $? -ne 0 ]; then echo "Unit tests failed"; exit 1; fi
