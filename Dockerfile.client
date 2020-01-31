@@ -1,0 +1,17 @@
+FROM ubuntu:16.04
+
+# Install PIP
+RUN apt-get update && apt-get -y install python-pip
+RUN pip install --upgrade pip
+ 
+# Install PyTest testing framework
+RUN pip install pytest==2.9.1 
+
+# Install Python iRODS client 
+RUN pip install python-irodsclient
+
+COPY irods_client_tests.py /
+COPY irods_client_tests.txt /
+COPY setup_client.sh /usr/bin
+
+ENTRYPOINT ["setup_client.sh"]

@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  irods_server:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.server
+    image: irods_server
+    networks:
+      - irods_network
+    ports:
+      - "5432:5432"
+      - "1247:1247"
+  irods_client:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.client
+    image: irods_client
+    networks:
+      - irods_network
+    environment:
+      IRODS_HOST: irods_server 
+      IRODS_PORT : 1247
+      IRODS_USER: rods 
+      IRODS_PASSWORD: rods
+      IRODS_ZONE: tempZone
+    depends_on:
+      - irods_server
+networks:
+  irods_network: {}

@@ -29,7 +29,7 @@ EXPOSE 5432
 EXPOSE 1247
 
 # Copy setup scripts to container 
-COPY setup.sh /usr/bin/setup.sh
+COPY setup_server.sh /usr/bin/setup_server.sh
 COPY setup_irods.input /var/lib/irods/scripts/setup_irods.input
 
-ENTRYPOINT ["setup.sh"]
+ENTRYPOINT ["setup_server.sh"]
