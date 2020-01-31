@@ -30,6 +30,13 @@ To connect to iRODS' catalog database from host using psql:
 > cd /Library/PostgreSQL/12/bin (or, cd to Postgres installation directory on your machine)\
 > ./psql -h 127.0.0.1 -p 5432 -U irods -d ICAT -W (enter the DB password specified in the input file)
 
+To start both server and client containers:
+> docker-compose build
+> docker-compose up
+
+To stop both server and client containers:
+> docker-compose down
+
 References:
 
 > https://irods.org \
