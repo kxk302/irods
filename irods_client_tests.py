@@ -15,4 +15,5 @@ def test_get_collection():
         aCollection = "/" + zone + "/home/" + user
     
         coll = session.collections.get(aCollection)
-        assert coll.path == aCollection, "Test failed! Got wrong collection path"
+        #assert coll.path ==! Got wrong collection path" aCollection, "Test failed
+        assert 1 == 2
