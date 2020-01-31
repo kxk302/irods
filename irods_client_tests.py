@@ -17,4 +17,3 @@ def test_get_collection():
         coll = session.collections.get(aCollection)
         #assert coll.path == aCollection, "Test failed! Got wrong collection path"
         assert coll.path == "Abc" , "Test failed! Got wrong collection path"
-
