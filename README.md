@@ -8,7 +8,7 @@ but please do not change the setup_irods.input.with_keys file!
 Below are some common Docker commands (versionNumber could by X.Y.Z, e.g. 1.0.1):
 
 To create an image:
-> sudo docker build -t irods:versionNumber
+> sudo docker build -f Dockerfile.server -t irods:0.1 .
 
 To view the created image:
 > sudo docker images -f "reference=irods"
