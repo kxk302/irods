@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run Docker compose to  start server and client containers
+    - name: Run Docker compose to start server and client containers
       run: docker-compose up -d
     - name: Run unit tests on client container
       run: |
