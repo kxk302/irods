@@ -80,7 +80,7 @@ def test_create_delete_new_data_object():
         with pytest.raises(CollectionDoesNotExist):
             coll = session.collections.get(newCollection)
 
-def test_create_populate_delete_new_data_object():
+def test_populate_fetch_new_data_object():
     with iRODSSession(host=os.environ['IRODS_HOST'], 
         port=os.environ['IRODS_PORT'], 
         user=os.environ['IRODS_USER'],  
