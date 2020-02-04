@@ -134,21 +134,3 @@ def test_populate_fetch_new_data_object():
         # Get collection
         with pytest.raises(CollectionDoesNotExist):
             coll = session.collections.get(newCollection)
-
-'''
-def test_get_collection_2():
-    try:
-        env_file = os.environ['IRODS_ENVIRONMENT_FILE']
-    except KeyError:
-        env_file = os.path.expanduser('~/.irods/irods_environment.json')
-
-    ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH, cafile=None, capath=None, cadata=None)
-    ssl_settings = {'ssl_context': ssl_context}
-    with iRODSSession(irods_env_file=env_file, **ssl_settings) as session:
-        zone=os.environ['IRODS_ZONE']
-        user=os.environ['IRODS_USER']
-        aCollection = "/" + zone + "/home/" + user
-   
-        coll = session.collections.get(aCollection)
-        assert coll.path == aCollection, "Test failed! Got wrong collection path"
-'''
