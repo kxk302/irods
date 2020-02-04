@@ -8,16 +8,16 @@ but please do not change the setup_irods.input.with_keys file!
 Below are some common Docker commands (versionNumber could by X.Y.Z, e.g. 1.0.1):
 
 To create an image:
-> sudo docker build -f Dockerfile.server -t irods:0.1 .
+> sudo docker build -f Dockerfile.server -t irods-server:versionNumber .
 
 To view the created image:
-> sudo docker images -f "reference=irods"
+> sudo docker images -f "reference=irods-server"
 
 To run a container (while mapping Postgres and iRODS ports to host machine):
-> sudo docker run -p 5432:5432 -p 1247:1247 irods:versionNumber
+> sudo docker run -p 5432:5432 -p 1247:1247 irods-server:versionNumber
 
 To get the name of the running irods container:
-> sudo docker ps -f "ancestor=irods:versionNumber"
+> sudo docker ps -f "ancestor=irods-server:versionNumber"
 
 To view the container logs:
 > sudo docker logs containerName
