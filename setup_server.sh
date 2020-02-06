@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # To allow Postgres to accept connections from Docker network 
-ip=`hostname -i`;
+ip=`hostname -I`;
 echo "host	all	all	$ip/24	md5" >> /etc/postgresql/9.6/main/pg_hba.conf;
 
 # Update IP address that Postgres listens on
