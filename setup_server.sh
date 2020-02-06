@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # To allow Postgres to accept connections from Docker network 
+# Use -I to omit loopback interface and IPv6 link-local addresses
+# Also, need to remove ay trailing space
 ip=`hostname -I`;
+ip=`echo $ip | tr -s " "`
 echo "host	all	all	$ip/24	md5" >> /etc/postgresql/9.6/main/pg_hba.conf;
 
 # Update IP address that Postgres listens on
