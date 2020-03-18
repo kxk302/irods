@@ -41,4 +41,6 @@ References:
 
 > https://irods.org \
 > https://irods.org/uploads/2016/06/irods_beginner_training_2016.pdf \
-> https://github.com/irods/python-irodsclient
+> https://github.com/irods/python-irodsclient \
+> https://github.com/irods/irods_resource_plugin_s3 \
+> https://irods.org/2019/09/irods-releases-cacheless-s3-resource-plugin/
