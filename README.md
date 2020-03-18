@@ -21,7 +21,7 @@ To view the created image:
 > sudo docker images -f "reference=irods-server"
 
 To run a container (while mapping Postgres and iRODS ports to host machine):
-> sudo docker run -p 5432:5432 -p 1247:1247 irods-server:versionNumber
+> sudo docker run -d -p 5432:5432 -p 1247:1247 irods-server:versionNumber
 
 To get the name of the running irods container:
 > sudo docker ps -f "ancestor=irods-server:versionNumber"
@@ -48,4 +48,6 @@ References:
 
 > https://irods.org \
 > https://irods.org/uploads/2016/06/irods_beginner_training_2016.pdf \
-> https://github.com/irods/python-irodsclient
+> https://github.com/irods/python-irodsclient \
+> https://github.com/irods/irods_resource_plugin_s3 \
+> https://irods.org/2019/09/irods-releases-cacheless-s3-resource-plugin/
