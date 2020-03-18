@@ -5,6 +5,13 @@ an input file (setup_irods.input), which has a single parameter specified on eac
 the input file means, refer to setup_irods.input.with_keys. You can edit setup_irods.input to configure your server as you wish, 
 but please do not change the setup_irods.input.with_keys file!
 
+The iRODS password is read from a file named irods_password_file.txt. Modify the dummy password in irods_password_file.txt. It MUST 
+match that in setup_irods.input file!
+
+If you want to create an S3 resource, in Dockerfile.server 1) set CREATE_S3_RESOURCE to True, 2) update the dummy AWS access ID and password 
+in s3_auth_file.keypair file. This file should contain the ID and secret, each on a separate line, and nothing else, and 3) in Dockerfile.server,
+set various S3 specific environment variables.  
+
 Below are some common Docker commands (versionNumber could by X.Y.Z, e.g. 1.0.1):
 
 To create an image:

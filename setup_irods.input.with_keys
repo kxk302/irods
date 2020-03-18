@@ -9,16 +9,16 @@ irods	# Database username
 yes	# Please confirm
 testpassword	# Database password
 salt	# Salt for passwords stored in the database
-tempZone	# iRODS server's zone name
-1247	# iRODS server's port
+tempZone	# iRODS server's zone name --- MUST match whats in irods_environment.json
+1247	# iRODS server's port --- MUST match whats in irods_environment.json
 20000	# iRODS port range (begin) 
 20199	# iRODS port range (end)
 1248	# Control Plane port
 file:///var/lib/irods/configuration_schemas	# Schema Validation Base URI (or off) 
-rods	# iRODS server's administrator username
+rods	# iRODS server's administrator username --- MUST match whats in irods_environment.json
 yes	# Please confirm 
 tempZoneKey	# iRODS server's zone key
 qwertyuiopasdfghjklzxcvbnm123456	# iRODS server's negotiation key (32 characters)
 qwertyuiopasdfghjklzxcvbnm123456	# Control Plane key (32 characters)
-rods	# iRODS server's administrator password        
+rods	# iRODS server's administrator password --- MUST match whats in setup_server.sh       
 /var/lib/irods/Vault	# iRODS Vault directory

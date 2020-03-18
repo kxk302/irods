@@ -24,6 +24,9 @@ RUN echo "deb [arch=amd64] https://unstable.irods.org/apt/ $(lsb_release -sc) ma
 # Update the repository indexes and install iRODS core server software
 RUN apt-get update && apt-get -y install irods-server irods-database-plugin-postgres
 
+# Install iRODS S3 pluggin
+RUN apt-get -y install irods-resource-plugin-s3
+ 
 # Expose ports for iRODS and Postgres servers
 EXPOSE 5432
 EXPOSE 1247
@@ -31,5 +34,23 @@ EXPOSE 1247
 # Copy setup scripts to container 
 COPY setup_server.sh /usr/bin/setup_server.sh
 COPY setup_irods.input /var/lib/irods/scripts/setup_irods.input
+COPY irods_environment_temp.json /root/.irods/irods_environment_temp.json
+
+# Copy S3 auth file to continer
+COPY s3_auth_file.keypair /s3_auth_file.keypair
+COPY irods_password_file.txt /irods_password_file.txt
+
+ENV CREATE_S3_RESOURCE=True
+ENV S3_BUCKET_PATH_TO_VAULT=/kxk302/irods/Vault
+ENV S3_DEFAULT_HOSTNAME=s3.us-east-2.amazonaws.com
+ENV S3_AUTH_FILE=/s3_auth_file.keypair
+ENV IRODS_PASSWORD_FILE=/irods_password_file.txt
+ENV S3_REGIONNAME=us-east-2
+ENV S3_RETRY_COUNT=1
+ENV S3_WAIT_TIME_SEC=3
+ENV S3_PROTO=HTTPS
+ENV ARCHIVE_NAMING_POLICY=consistent
+ENV HOST_MODE=cacheless_attached
+ENV S3_SIGNATURE_VERSION=4
 
 ENTRYPOINT ["setup_server.sh"]
