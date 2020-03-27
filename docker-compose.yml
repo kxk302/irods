@@ -8,7 +8,6 @@ services:
     networks:
       - network
     ports:
-      - "5432:5432"
       - "1247:1247"
   client:
     build: 

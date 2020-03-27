@@ -27,8 +27,7 @@ RUN apt-get update && apt-get -y install irods-server irods-database-plugin-post
 # Install iRODS S3 pluggin
 RUN apt-get -y install irods-resource-plugin-s3
  
-# Expose ports for iRODS and Postgres servers
-EXPOSE 5432
+# Expose port for iRODS
 EXPOSE 1247
 
 # Copy setup scripts to container 
@@ -40,7 +39,7 @@ COPY irods_environment_temp.json /root/.irods/irods_environment_temp.json
 COPY s3_auth_file.keypair /s3_auth_file.keypair
 COPY irods_password_file.txt /irods_password_file.txt
 
-ENV CREATE_S3_RESOURCE=True
+ENV CREATE_S3_RESOURCE=False
 ENV S3_BUCKET_PATH_TO_VAULT=/kxk302/irods/Vault
 ENV S3_DEFAULT_HOSTNAME=s3.us-east-2.amazonaws.com
 ENV S3_AUTH_FILE=/s3_auth_file.keypair
