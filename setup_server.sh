@@ -24,11 +24,11 @@ sudo -u postgres psql --command "GRANT ALL PRIVILEGES ON DATABASE \"ICAT\" TO ir
 python /var/lib/irods/scripts/setup_irods.py < /var/lib/irods/scripts/setup_irods.input
 rm /var/lib/irods/scripts/setup_irods.input
 
-# Wait till iRODS server is up
-sleep 10
-
 # Create S3 storage resourc
 if [ $CREATE_S3_RESOURCE == "True" ]; then
+	# Wait till iRODS server is up
+	sleep 10
+
 	# Put IP address in iRODS env file via sed and delete the temporary file
 	sed "s/IRODS_HOST/$ip/g" /root/.irods/irods_environment_temp.json > /root/.irods/irods_environment.json
 	rm /root/.irods/irods_environment_temp.json
