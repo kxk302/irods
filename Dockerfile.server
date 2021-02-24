@@ -1,8 +1,11 @@
 FROM ubuntu:16.04
 
 # Install some needed utilities
-RUN apt-get update && apt-get -y install apt-utils && apt-get -y install wget \
-    && apt-get -y install apt-transport-https ca-certificates
+RUN apt-get update && \
+    apt-get -y install apt-utils && \
+    apt-get -y install wget && \
+    apt-get -y install apt-transport-https &&  \
+    apt-get -y install ca-certificates
 
 # Add the Postgresql PGP key to verify the Debian packages.
 RUN wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
@@ -11,18 +14,24 @@ RUN wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
 
 # Update the repository indexes and install Postgresql (and related) software
-RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common \
-    && apt-get -y -q install postgresql-9.6 postgresql-client-9.6 postgresql-contrib-9.6
+RUN apt-get update && \
+    apt-get -y install python-software-properties && \
+    apt-get -y install software-properties-common && \
+    apt-get -y install postgresql-9.6 && \
+    apt-get -y install postgresql-client-9.6 && \
+    apt-get -y install postgresql-contrib-9.6
 
 
 # Add the iRODS PGP key to verify the Debian packages.
-RUN wget -qO - https://unstable.irods.org/irods-unstable-signing-key.asc | apt-key add -
+RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add -
 
 # Add iRODS' repository
-RUN echo "deb [arch=amd64] https://unstable.irods.org/apt/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/renci-irods-unstable.list
+RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/renci-irods.list
 
 # Update the repository indexes and install iRODS core server software
-RUN apt-get update && apt-get -y install irods-server irods-database-plugin-postgres
+RUN apt-get update && \
+    apt-get -y install irods-server && \
+    apt-get -y install irods-database-plugin-postgres
 
 # Install iRODS S3 pluggin
 RUN apt-get -y install irods-resource-plugin-s3
