@@ -51,3 +51,5 @@ References:
 > https://github.com/irods/python-irodsclient \
 > https://github.com/irods/irods_resource_plugin_s3 \
 > https://irods.org/2019/09/irods-releases-cacheless-s3-resource-plugin/
+> https://github.com/irods/irods_capability_storage_tiering
+> https://slides.com/irods/ugm2019-administration-storage-tiering
