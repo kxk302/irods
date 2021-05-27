@@ -26,6 +26,8 @@ rm /var/lib/irods/scripts/setup_irods.input
 
 # Create S3 storage resourc
 if [ $CREATE_S3_RESOURCE == "True" ]; then
+	echo "Creating S3 resource"
+
 	# Wait till iRODS server is up
 	sleep 10
 

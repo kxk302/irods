@@ -31,7 +31,8 @@ RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ $(lsb_release -sc) ma
 # Update the repository indexes and install iRODS core server software
 RUN apt-get update && \
     apt-get -y install irods-server && \
-    apt-get -y install irods-database-plugin-postgres
+    apt-get -y install irods-database-plugin-postgres && \
+    apt-get -y install irods-rule-engine-plugin-unified-storage-tiering
 
 # Install iRODS S3 pluggin
 RUN apt-get -y install irods-resource-plugin-s3
