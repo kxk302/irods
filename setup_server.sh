@@ -2,7 +2,7 @@
 
 # To allow Postgres to accept connections from Docker network 
 # Use -I to omit loopback interface and IPv6 link-local addresses
-# Also, need to remove ay trailing space
+# Also, need to remove any trailing space
 ip=`hostname -I`;
 ip=`echo $ip | tr -s " "`
 echo "host	all	all	$ip/24	md5" >> /etc/postgresql/9.6/main/pg_hba.conf;
@@ -48,6 +48,11 @@ if [ $CREATE_S3_RESOURCE == "True" ]; then
 else
 	echo "Not creating S3 resource"
 fi
+
+# Start irods server as setup_irods.py does *not* start iRODS at the end of its configuration work
+# https://github.com/irods/irods/issues/5275
+echo "Starting irods server"
+su - irods /var/lib/irods/irodsctl start
 
 # To prevent container from existing
 tail -f /dev/null
