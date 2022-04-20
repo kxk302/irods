@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile.server
-    image: server
+    image: irods-server:0.2
     networks:
       - network
     ports:
@@ -13,7 +13,7 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile.client
-    image: client
+    image: irods-client:0.2
     networks:
       - network
     environment:
