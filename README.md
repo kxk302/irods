@@ -44,6 +44,16 @@ To start both server and client containers:
 To stop both server and client containers:
 > docker-compose down
 
+To tag a new image (IMAGE ID: 147c221885f4, TAG: 4.2.10):
+> docker tag 147c221885f4 kxk302/irods-server:4.2.10
+  
+To push the newly tagged image to your Docker Hub repository:
+> docker login\
+> docker push kxk302/irods-server:4.2.10
+
+To pull the newly tagged image from your Docker Hub repository:
+> docker pull kxk302/irods-server:4.2.10
+
 References:
 
 > https://irods.org \
