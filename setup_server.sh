@@ -55,4 +55,4 @@ echo "Starting irods server"
 su - irods /var/lib/irods/irodsctl start
 
 # To prevent container from existing
-tail -f /dev/null
+tail -f /var/lib/irods/logs/control_log.txt
